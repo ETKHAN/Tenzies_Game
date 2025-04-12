@@ -1,0 +1,69 @@
+
+body, #root {
+  margin: 0;
+  padding: 0;
+}
+
+
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 800px;
+
+  margin: 0 20px;
+
+}
+
+p{
+  font-size: 1.3em;
+  font-weight: 600;
+  text-align: center;
+  margin: 5px 0;
+}
+
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+  gap: 10px;
+  padding: 20px 0;
+}
+
+.btn {
+  aspect-ratio: 1 / 1; /* Makes the button square */
+  border: 1px solid #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn:hover{
+  font-weight: 600;
+}
+
+
+.control-btn{
+  margin: 10px 0;
+  padding: 10px 20px;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: 1px solid #fff;
+}
+
+.clicked {
+  border-color: #646cff;
+}
+
+
+@media (max-width: 450px) {
+  .btn {
+    font-size: 14px;
+  }
+  .container{
+
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  }
+}
