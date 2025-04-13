@@ -36,7 +36,7 @@ p{
 .btn {
   aspect-ratio: 1 / 1; /* Makes the button square */
   border: 1px solid #fff;
-  font-size: 22px;
+  font-size: 30px;
   font-weight: 600;
   cursor: pointer;
 }
