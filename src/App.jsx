@@ -63,6 +63,9 @@ function App() {
 
   function newGame(){
     setButtons(defaultStateButtons())
+    setGameEnd(false)
+
+    firstClickedTextRef.current = null
   }
 
   return (
