@@ -55,7 +55,9 @@ p{
 }
 
 .clicked {
-  border-color: #646cff;
+  border: 2px solid #646cff;
+  transform: scale(1.05);
+  font-weight: bold;
 }
 
 
