@@ -1,4 +1,6 @@
 import { useEffect, useState, useRef } from 'react'
+import { useWindowSize } from 'react-use'
+import Confetti from 'react-confetti'
 import './App.css'
 
 
@@ -18,12 +20,13 @@ function App() {
   const firstClickedTextRef = useRef(null)
   
   
-  useEffect(() => {
-    
-    if((buttons.every(btn => btn.clicked === true))){
-      setGameEnd(true);
-    }
-  }, [...buttons])
+    useEffect(() => {
+      if((buttons.every(btn => btn.clicked === true))){
+  
+        setGameEnd(true);
+      }
+
+    }, [buttons])
 
 
 
@@ -63,10 +66,19 @@ function App() {
 
   function newGame(){
     setButtons(defaultStateButtons())
+    setGameEnd(false)
+
+    firstClickedTextRef.current = null
   }
 
+
+    const { width, height } = useWindowSize()
   return (
     <main >
+      {gameEnd ? <Confetti
+      width={width}
+      height={height}
+    /> : undefined}
       <h1>Tenzies</h1>
       <p>Roll The Dice to get the same number on each. click the dice to freeze its value</p>
       <div className="container">{
